@@ -17,7 +17,7 @@ updater.start_polling()
 
 def spieleabend(bot, update):
 	print(update.message.chat_id)
-	bot.send_message(chat_id=update.message.chat_id, text="Jeden zweiten Freitag ist Spieleabend! Der nächste ist am {0}".format(nextspieleabend().strftime('%d %b %Y')))
+	bot.send_message(chat_id=update.message.chat_id, text="Jeden zweiten Freitag ist Spieleabend! Der nächste ist am {0}! Los geht's, wie immer, um 20 Uhr!".format(nextspieleabend().strftime('%d %b %Y')))
 
 spieleabend_handler = CommandHandler('spieleabend', spieleabend)
 dispatcher.add_handler(spieleabend_handler)
