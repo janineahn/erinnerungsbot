@@ -66,4 +66,12 @@ def nextspieleabend():
 	
 	return nextspieleabend
 
+def erinnerung(bot, _):
+	#today = datetime.date.today()
+	#today = datetime.fromtimestamp(1521120934)
+	#if today == nextspieleabend - datetime.timedelta(days=1):
+	bot.send_message(chat_id=15849814, text="Morgen ist Spieleabend! 20 Uhr gehts los!".format(nextspieleabend().strftime('%d %b %Y')))
 	
+
+updater.job_queue.run_repeating(erinnerung, interval=1800, first=0)	
+
